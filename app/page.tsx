@@ -1,10 +1,11 @@
 import { CustomCursor } from './custom-cursor';
 import { AnimatedProjectLink } from './animated-project-link';
+import { TypewriterIntro } from './typewriter-intro';
 
 const projects = [
   { image: '/projects/shangrantang-purple.jpg', position: 'center', fit: 'cover', title: ['让传统草本进入', '当代生活方式'], subtitle: '尚然堂', meta: '包装设计·2026' },
   { image: '/projects/nero-craft-beer.jpg', position: 'center', fit: 'cover', title: ['打造当代精酿啤酒的', '年轻新风尚'], subtitle: '耐热NÉRO', meta: '包装设计·2026' },
-  { image: '/projects/caa-synesthesia.jpg', position: 'center', fit: 'cover', title: ['艺术通感的视听交互'], subtitle: '中国美术学院', meta: '活动设计2023' },
+  { image: '/projects/caa-synesthesia-stage.png', position: 'center', fit: 'cover', title: ['艺术通感的视听交互'], subtitle: '中国美术学院', meta: '活动设计2023' },
   { image: '/projects/mango-drink-clean.jpg', position: 'center', fit: 'cover', title: ['让传统草本进入', '当代生活方式'], subtitle: '尚然堂', meta: '包装设计·2026' },
   { image: '/projects/project-5.jpg', position: 'center', fit: 'cover', title: ['让传统草本进入', '当代生活方式'], subtitle: '尚然堂', meta: '包装设计·2026' },
   { image: '/projects/project-6.jpg', position: 'center', fit: 'cover', title: ['让传统草本进入', '当代生活方式'], subtitle: '尚然堂', meta: '包装设计·2026' },
@@ -46,7 +47,7 @@ export default function Home() {
       </header>
 
       <section className="hero" aria-labelledby="intro-title">
-        <h1 id="intro-title">你好，我是张译文，一名专注于创造视觉体验、实现信息传达的设计师。</h1>
+        <TypewriterIntro />
         <a href="#works" className="scroll-indicator" aria-label="向下浏览作品"><span /></a>
       </section>
 
