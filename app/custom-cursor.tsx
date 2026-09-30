@@ -18,10 +18,10 @@ export function CustomCursor() {
         cursor.dataset.visible = 'true';
       });
     };
-    const hide = () => { cursor.dataset.visible = 'false'; };
+    const hide = () => { cancelAnimationFrame(frame); cursor.dataset.visible = 'false'; };
     const hover = (event: PointerEvent) => {
-      const target = event.target as HTMLElement;
-      cursor.dataset.active = target.closest('a, button') ? 'true' : 'false';
+      const target = event.target;
+      cursor.dataset.active = target instanceof Element && target.closest('a, button') ? 'true' : 'false';
     };
 
     window.addEventListener('pointermove', move, { passive: true });

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { CustomCursor } from '../../custom-cursor';
 import { AnimatedProjectLink } from '../../animated-project-link';
 import { ResetDetailScroll } from './reset-detail-scroll';
+import { NextProjects } from '../../next-projects';
 
 export const metadata: Metadata = {
   title: '尚然堂｜张译文 EVEN ZHANG',
@@ -39,10 +40,10 @@ export default function ShangrantangProject() {
       <ResetDetailScroll />
       <CustomCursor />
       <header className="site-header detail-header">
-        <AnimatedProjectLink href="/" className="identity" ariaLabel="返回首页" transition>视觉设计师_张译文</AnimatedProjectLink>
+        <AnimatedProjectLink href="/" className="identity" ariaLabel="返回首页" transition>EVEN ZHANG 张译文</AnimatedProjectLink>
         <nav aria-label="主导航">
-          <AnimatedProjectLink href="/#works" className="" ariaLabel="返回首页作品区域" transition>作品</AnimatedProjectLink>
-          <AnimatedProjectLink href="/#contact" className="" ariaLabel="返回首页联系区域" transition>联系</AnimatedProjectLink>
+          <AnimatedProjectLink href="/#works" className="" ariaLabel="返回首页作品区域" transition>WORKS</AnimatedProjectLink>
+          <AnimatedProjectLink href="/#contact" className="" ariaLabel="返回首页联系区域" transition>CONTACT</AnimatedProjectLink>
         </nav>
       </header>
 
@@ -75,6 +76,7 @@ export default function ShangrantangProject() {
         ))}
       </section>
 
+      <NextProjects />
       <footer className="detail-footer">
         <AnimatedProjectLink href="/#works" className="" ariaLabel="返回全部作品" transition>← 返回全部作品</AnimatedProjectLink>
         <a href="#top">回到顶部 ↑</a>

@@ -40,9 +40,14 @@ export function PageTransition() {
   useEffect(() => {
     if (!waitingForRoute.current) return;
     waitingForRoute.current = false;
-    window.requestAnimationFrame(() => {
-      window.requestAnimationFrame(() => updatePhase('revealing'));
+    let revealFrame = 0;
+    const prepareFrame = window.requestAnimationFrame(() => {
+      revealFrame = window.requestAnimationFrame(() => updatePhase('revealing'));
     });
+    return () => {
+      window.cancelAnimationFrame(prepareFrame);
+      window.cancelAnimationFrame(revealFrame);
+    };
   }, [pathname]);
 
   return (
