@@ -7,7 +7,7 @@ import { ProjectVideo } from '../../project-video';
 import { ResetDetailScroll } from '../shangrantang/reset-detail-scroll';
 const projects = {
   nero: { name: '耐热 NÉRO', title: '打造当代精酿啤酒的年轻新风尚', image: 'nero-craft-beer.jpg', meta: '包装设计 · 2026' },
-  synesthesia: { name: '中国美术学院', title: '艺术通感的视听交互', image: 'caa-synesthesia.jpg', meta: '' },
+  synesthesia: { name: '中国美术学院', title: '艺术通感的视听交互', image: 'synesthesia-cover-1920.webp', meta: '' },
 };
 type Props = { params: Promise<{ slug: string }> };
 function getProject(slug: string) { return Object.prototype.hasOwnProperty.call(projects, slug) ? projects[slug as keyof typeof projects] : undefined; }
@@ -25,7 +25,7 @@ export default async function Project({ params }: Props) {
     <header className="site-header"><AnimatedProjectLink href="/" className="identity" ariaLabel="返回首页" transition>EVEN ZHANG 张译文</AnimatedProjectLink><nav aria-label="主导航"><AnimatedProjectLink href="/#works" className="" ariaLabel="返回全部作品" transition>WORKS</AnimatedProjectLink><AnimatedProjectLink href="/#contact" className="" ariaLabel="联系" transition>CONTACT</AnimatedProjectLink></nav></header>
     {slug === 'synesthesia' ? <div className="detail-transition">
       <section className="detail-hero" aria-label="艺术通感项目封面">
-        <div className="detail-hero-frame"><img src={`/projects/${project.image}`} alt={project.title} /></div>
+        <div className="detail-hero-frame"><img src={`/projects/${project.image}`} srcSet="/projects/synesthesia-cover-960.webp 960w, /projects/synesthesia-cover-1920.webp 1920w" sizes="(max-width: 700px) calc(100vw - 24px), 100vw" alt={project.title} fetchPriority="high" /></div>
       </section>
       <section className="detail-intro" aria-labelledby="detail-intro-title">
         <p className="detail-info-label">INFO</p>
@@ -51,7 +51,7 @@ export default async function Project({ params }: Props) {
           return <img key={number}
             src={`/projects/synesthesia/${number}-1920.webp`}
             srcSet={`/projects/synesthesia/${number}-960.webp 960w, /projects/synesthesia/${number}-1920.webp 1920w`}
-            sizes="calc(100vw - 72px)"
+            sizes="(max-width: 700px) calc(100vw - 24px), calc(100vw - 72px)"
             width={1920} height={Math.round(height * 1920 / 3780)}
             alt={`通感·博雅国际学术论坛视觉设计 · ${number}`}
             loading="lazy" decoding="async" />;

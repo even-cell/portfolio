@@ -1,5 +1,4 @@
 import { ContactSection } from './contact-section';
-import { HeroImageTrail } from './hero-image-trail';
 import { CustomCursor } from './custom-cursor';
 import { AnimatedProjectLink } from './animated-project-link';
 
@@ -8,7 +7,7 @@ const intro = '你好，我是张译文，一名专注于创造视觉体验、�
 const projects = [
   { image: '/projects/shangrantang-purple.jpg', position: 'center', fit: 'cover', title: ['让传统草本进入', '当代生活方式'], subtitle: '尚然堂', meta: '包装设计·2026' },
   { image: '/projects/nero-craft-beer.jpg', position: 'center', fit: 'cover', title: ['打造当代精酿啤酒的', '年轻新风尚'], subtitle: '耐热NÉRO', meta: '包装设计·2026' },
-  { image: '/projects/caa-synesthesia-stage.png', position: 'center', fit: 'cover', title: ['艺术通感的视听交互'], subtitle: '中国美术学院', meta: '活动设计2023' },
+  { image: '/projects/synesthesia-cover-1920.webp', position: 'center', fit: 'cover', title: ['艺术通感的视听交互'], subtitle: '中国美术学院', meta: '活动设计2023' },
   { image: '/projects/mango-drink-clean.jpg', position: 'center', fit: 'cover', title: ['让传统草本进入', '当代生活方式'], subtitle: '尚然堂', meta: '包装设计·2026' },
   { image: '/projects/project-5.jpg', position: 'center', fit: 'cover', title: ['让传统草本进入', '当代生活方式'], subtitle: '尚然堂', meta: '包装设计·2026' },
   { image: '/projects/project-6.jpg', position: 'center', fit: 'cover', title: ['让传统草本进入', '当代生活方式'], subtitle: '尚然堂', meta: '包装设计·2026' },
@@ -19,6 +18,8 @@ function ProjectCard({ project, index }: { project: (typeof projects)[number]; i
     <>
       <img
         src={project.image}
+        srcSet={index === 2 ? "/projects/synesthesia-cover-960.webp 960w, /projects/synesthesia-cover-1920.webp 1920w" : undefined}
+        sizes={index === 2 ? "(max-width: 700px) calc(100vw - 24px), calc(100vw - 72px)" : undefined}
         alt={`${project.subtitle}项目预览`}
         loading={index > 2 ? 'lazy' : 'eager'}
         style={{ objectPosition: project.position, objectFit: project.fit as 'cover' | 'contain' }}
@@ -50,7 +51,6 @@ export default function Home() {
       </header>
 
       <section className="hero" aria-labelledby="intro-title">
-        <HeroImageTrail />
         <h1 id="intro-title">{intro}</h1>
         <a href="#works" className="scroll-indicator" aria-label="向下浏览作品"><span /></a>
       </section>
