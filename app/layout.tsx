@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ImageProtection } from './image-protection';
-import { PageTransition } from './page-transition';
+import { SmoothScroll } from './smooth-scroll';
+import 'lenis/dist/lenis.css';
 import './globals.css';
 
 const geistSans = Geist({
@@ -15,17 +16,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: '张译文 EVEN ZHANG｜设计师作品集',
+  title: 'EVEN ZHANG 张译文｜DESIGNER',
   description: '张译文（Even Zhang）的个人设计作品集，关注视觉、体验与空间。',
   openGraph: {
-    title: '张译文 EVEN ZHANG｜设计师作品集',
+    title: 'EVEN ZHANG 张译文｜DESIGNER',
     description: '关注视觉、体验与空间的个人设计作品集。',
     type: 'website',
     images: [{ url: '/og-even-zhang.png', width: 1200, height: 628, alt: 'EVEN ZHANG DESIGN PORTFOLIO' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '张译文 EVEN ZHANG｜设计师作品集',
+    title: 'EVEN ZHANG 张译文｜DESIGNER',
     description: '关注视觉、体验与空间的个人设计作品集。',
     images: ['/og-even-zhang.png'],
   },
@@ -41,9 +42,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async />
         <ImageProtection />
+        <SmoothScroll />
         {children}
-        <PageTransition />
       </body>
     </html>
   );

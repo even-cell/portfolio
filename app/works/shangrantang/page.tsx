@@ -40,10 +40,10 @@ export default function ShangrantangProject() {
       <ResetDetailScroll />
       <CustomCursor />
       <header className="site-header detail-header">
-        <AnimatedProjectLink href="/" className="identity" ariaLabel="返回首页" transition>视觉设计师_张译文</AnimatedProjectLink>
+        <AnimatedProjectLink href="/" className="identity" ariaLabel="返回首页" transition><span>EVEN ZHANG</span><span>张译文</span></AnimatedProjectLink>
         <nav aria-label="主导航">
-          <AnimatedProjectLink href="/#works" className="" ariaLabel="返回首页作品区域" transition>作品</AnimatedProjectLink>
-          <AnimatedProjectLink href="/#contact" className="" ariaLabel="返回首页联系区域" transition>联系</AnimatedProjectLink>
+          <AnimatedProjectLink href="/#works" className="" ariaLabel="返回首页作品区域" transition>WORKS</AnimatedProjectLink>
+          <AnimatedProjectLink href="/#contact" className="" ariaLabel="返回首页联系区域" transition>CONTACT</AnimatedProjectLink>
         </nav>
       </header>
 
