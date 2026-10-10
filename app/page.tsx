@@ -2,7 +2,7 @@ import { ContactSection } from './contact-section';
 import { CustomCursor } from './custom-cursor';
 import { AnimatedProjectLink } from './animated-project-link';
 
-const intro = '你好，我是张译文，一名专注于创造视觉体验、实现信息传达的设计师。';
+const intro = '我是张译文，一名专注于创造视觉体验、实现信息传达的设计师。';
 
 const projects = [
   { image: '/projects/shangrantang-purple.jpg', position: 'center', fit: 'cover', title: ['让传统草本进入', '当代生活方式'], subtitle: '尚然堂', meta: '包装设计·2026' },
@@ -55,7 +55,7 @@ export default function Home() {
       </header>
 
       <section className="hero" aria-labelledby="intro-title">
-        <h1 id="intro-title">{intro}</h1>
+        <h1 id="intro-title"><span>你好，欢迎来到这里 •ᴗ•</span>{intro}</h1>
         <a href="#works" className="scroll-indicator" aria-label="向下浏览作品"><span /></a>
       </section>
 

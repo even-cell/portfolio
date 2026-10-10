@@ -15,7 +15,7 @@ export function NextProjects({ current = 'shangrantang' }: { current?: string })
     <div className="next-heading"><h2 id="next-title">NEXT</h2></div>
     <div className="next-grid" aria-label="更多作品">
       {orderedWorks.map(work => {
-        const content = <><div className="next-image"><img src={`/projects/${work.image}`} alt={work.name} loading="lazy" draggable={false} /></div><div className="next-caption"><span>{work.name}</span><small>{work.href ? '查看项目 ↗' : '即将上线'}</small></div></>;
+        const content = <><div className="next-image"><img src={`/projects/${work.image}`} alt={work.name} loading="lazy" draggable={false} /></div><div className="sr-only"><span>{work.name}</span><small>{work.href ? '查看项目 ↗' : '即将上线'}</small></div></>;
         return work.href ? <AnimatedProjectLink key={work.id} href={work.href} ariaLabel={`查看${work.name}详情`} className="next-card" transition>{content}</AnimatedProjectLink> : <article className="next-card next-pending" key={work.id}>{content}</article>;
       })}
     </div>

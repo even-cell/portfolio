@@ -1,3 +1,5 @@
+import { ContactSection } from '../../contact-section';
+import { ProjectInfo } from '../../project-info';
 import type { Metadata } from 'next';
 import { CustomCursor } from '../../custom-cursor';
 import { AnimatedProjectLink } from '../../animated-project-link';
@@ -54,18 +56,9 @@ export default function ShangrantangProject() {
           </div>
         </section>
 
-        <section className="detail-intro" aria-labelledby="detail-intro-title">
-          <p className="detail-info-label">INFO</p>
-          <h2 id="detail-intro-title">
-            尚然堂希望让传统草本养生进入更轻盈的当代生活。项目以东方药材的自然形态为线索，通过克制的排版、低饱和色彩与细腻材质，建立兼具专业可信度与日常亲和力的包装视觉系统。
-          </h2>
-          <div className="detail-facts">
-            <div><span>YEAR</span><strong>2026</strong></div>
-            <div><span>CLIENT</span><strong>尚然堂</strong></div>
-            <div><span>SERVICES</span><strong>品牌视觉、包装设计</strong></div>
-            <div><span>CATEGORY</span><strong>草本养生</strong></div>
-          </div>
-        </section>
+        <ProjectInfo name="尚然堂" title="让传统草本进入当代生活方式"
+          description="尚然堂希望让传统草本养生进入更轻盈的当代生活。项目以东方药材的自然形态为线索，通过克制的排版、低饱和色彩与细腻材质，建立兼具专业可信度与日常亲和力的包装视觉系统。"
+          year="2026" services="包装设计、品牌视觉" category="草本养生" />
       </div>
 
       <section className="detail-gallery" aria-label="尚然堂项目图片">
@@ -77,10 +70,7 @@ export default function ShangrantangProject() {
       </section>
 
       <NextProjects />
-      <footer className="detail-footer">
-        <AnimatedProjectLink href="/#works" className="" ariaLabel="返回全部作品" transition>← 返回全部作品</AnimatedProjectLink>
-        <a href="#top">回到顶部 ↑</a>
-      </footer>
+      <ContactSection />
     </main>
   );
 }
