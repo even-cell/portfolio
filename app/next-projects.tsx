@@ -2,7 +2,7 @@
 import { AnimatedProjectLink } from './animated-project-link';
 const works = [
   { id: 'shangrantang', name: '尚然堂', image: 'shangrantang-purple.jpg', href: '/works/shangrantang' },
-  { id: 'nero', name: '耐热 NÉRO', image: 'nero-craft-beer.jpg', href: '/works/nero' },
+  { id: 'nero', name: '耐热 NÉRO', image: 'fora-cover-960.webp?v=2', href: '/works/nero' },
   { id: 'synesthesia', name: '中国美术学院', image: 'synesthesia-cover-960.webp', href: '/works/synesthesia' },
   { id: 'mango', name: '果汁包装设计', image: 'mango-drink-clean.jpg', href: '' },
   { id: 'project-5', name: '包装设计 / 05', image: 'project-5.jpg', href: '' },

@@ -1,3 +1,4 @@
+import { SiteHeader } from '../../site-header';
 import { ContactSection } from '../../contact-section';
 import { ProjectInfo } from '../../project-info';
 import type { Metadata } from 'next';
@@ -41,13 +42,7 @@ export default function ShangrantangProject() {
     <main id="top" className="project-detail">
       <ResetDetailScroll />
       <CustomCursor />
-      <header className="site-header detail-header">
-        <AnimatedProjectLink href="/" className="identity" ariaLabel="返回首页" transition><span>EVEN ZHANG</span><span>张译文</span></AnimatedProjectLink>
-        <nav aria-label="主导航">
-          <AnimatedProjectLink href="/#works" className="" ariaLabel="返回首页作品区域" transition>WORKS</AnimatedProjectLink>
-          <AnimatedProjectLink href="/#contact" className="" ariaLabel="返回首页联系区域" transition>CONTACT</AnimatedProjectLink>
-        </nav>
-      </header>
+      <SiteHeader />
 
       <div className="detail-transition">
         <section className="detail-hero" aria-label="尚然堂项目封面">

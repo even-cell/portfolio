@@ -1,12 +1,11 @@
+import { SiteHeader } from './site-header';
 import { ContactSection } from './contact-section';
 import { CustomCursor } from './custom-cursor';
 import { AnimatedProjectLink } from './animated-project-link';
 
-const intro = '我是张译文，一名专注于创造视觉体验、实现信息传达的设计师。';
-
 const projects = [
   { image: '/projects/shangrantang-purple.jpg', position: 'center', fit: 'cover', title: ['让传统草本进入', '当代生活方式'], subtitle: '尚然堂', meta: '包装设计·2026' },
-  { image: '/projects/nero-craft-beer.jpg', position: 'center', fit: 'cover', title: ['打造当代精酿啤酒的', '年轻新风尚'], subtitle: '耐热NÉRO', meta: '包装设计·2026' },
+  { image: '/projects/fora-cover-1920.webp?v=2', position: 'center', fit: 'cover', title: ['打造当代精酿啤酒的', '年轻新风尚'], subtitle: '耐热NÉRO', meta: '包装设计·2026' },
   { image: '/projects/synesthesia-forum-cover-1920.webp', position: 'center', fit: 'cover', title: ['艺术通感的视听交互'], subtitle: '中国美术学院', meta: '活动设计2023' },
   { image: '/projects/primva-cover.webp?v=2', position: 'center', fit: 'cover', title: ['让传统草本进入', '当代生活方式'], subtitle: '尚然堂', meta: '包装设计·2026' },
   { image: '/projects/doctor-roo-cover.webp?v=2', position: 'center', fit: 'cover', title: ['让传统草本进入', '当代生活方式'], subtitle: '尚然堂', meta: '包装设计·2026' },
@@ -22,8 +21,8 @@ function ProjectCard({ project, index }: { project: (typeof projects)[number]; i
     <>
       <img
         src={project.image}
-        srcSet={index === 2 ? "/projects/synesthesia-forum-cover-960.webp 960w, /projects/synesthesia-forum-cover-1920.webp 1920w" : undefined}
-        sizes={index === 2 ? "(max-width: 700px) calc(100vw - 24px), calc(100vw - 72px)" : undefined}
+        srcSet={index === 1 ? "/projects/fora-cover-960.webp?v=2 960w, /projects/fora-cover-1920.webp?v=2 1920w" : index === 2 ? "/projects/synesthesia-forum-cover-960.webp 960w, /projects/synesthesia-forum-cover-1920.webp 1920w" : undefined}
+        sizes={index === 1 ? "(max-width: 700px) calc(100vw - 24px), calc((100vw - 84px) / 2)" : index === 2 ? "(max-width: 700px) calc(100vw - 24px), calc(100vw - 72px)" : undefined}
         alt={`${project.subtitle}项目预览`}
         loading={index > 2 ? 'lazy' : 'eager'}
         style={{ objectPosition: project.position, objectFit: project.fit as 'cover' | 'contain' }}
@@ -49,13 +48,10 @@ export default function Home() {
   return (
     <main id="top">
       <CustomCursor />
-      <header className="site-header">
-        <a href="#top" className="identity" aria-label="回到首页"><span>EVEN ZHANG</span><span>张译文</span></a>
-        <nav aria-label="主导航"><a href="#works">WORKS</a><a href="#contact">CONTACT</a></nav>
-      </header>
+      <SiteHeader home />
 
       <section className="hero" aria-labelledby="intro-title">
-        <h1 id="intro-title"><span>你好，欢迎来到这里 •ᴗ•</span>{intro}</h1>
+        <h1 id="intro-title"><span>你好，欢迎来到这里 •ᴗ•</span>我是张译文，一名专注于创造视觉<br />体验、实现信息传达的设计师。</h1>
         <a href="#works" className="scroll-indicator" aria-label="向下浏览作品"><span /></a>
       </section>
 
