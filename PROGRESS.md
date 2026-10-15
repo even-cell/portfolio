@@ -1,7 +1,7 @@
 # 作品集进度与偏好
 
 更新日期：2026-10-15（Asia/Shanghai）
-状态：用户已授权将当前版本备份到 GitHub 并部署到 Cloudflare；部署结果以本次发布记录为准。
+状态：2026-10-15 最新版本已备份到 GitHub 并部署到 Cloudflare，正式域名验证通过。
 
 ## 用户确认的预览方式
 
@@ -73,3 +73,9 @@ TypeScript 检查及生产构建通过；检查过 1440px 桌面、390px 手机�
 - 手机页尾字标放大约 35%，45 秒循环；桌面保持原尺寸和 65 秒循环。
 - 一并包含 10 月 12–13 日已确认的详情页、卡片触控和 V1 页尾改动。
 - TypeScript 检查和生产构建通过；发布目标 GitHub even-cell/portfolio main、Cloudflare evenportfolio（www.evenzhang.work）。
+
+### 发布结果
+- 网站代码提交：fb5a717，已推送 origin/main。
+- Cloudflare 版本：1adcbf84-02e3-4b5f-8dca-3650195fa69c，Worker evenportfolio 部署成功。
+- https://www.evenzhang.work 首页、ABOUT、三个详情页均 HTTP 200。
+- 正式域名 CSS 已核验：手机全屏菜单动画、6px 卡片间距、放大页尾字标和 45 秒循环均生效。
