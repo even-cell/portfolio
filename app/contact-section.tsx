@@ -17,7 +17,10 @@ export function ContactSection() {
         <p>本网站作品仅用于个人展示与交流，相关知识产权归各权利人所有，未经授权不得转载或用于商业用途。</p>
       </div>
       <a href="#top" className="contact-wordmark" aria-label="Even Zhang · 返回顶部">
-        <img src="/branding/even-zhang.svg" width="1870" height="341" alt="Even Zhang" />
+        <span className="contact-marquee-track" aria-hidden="true">
+          <img src="/branding/footer-marquee.svg" width="6845.01" height="152.15" alt="" />
+          <img src="/branding/footer-marquee.svg" width="6845.01" height="152.15" alt="" />
+        </span>
       </a>
     </footer>
   );

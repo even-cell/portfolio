@@ -41,7 +41,7 @@ function ProjectCard({ project, index }: { project: (typeof projects)[number]; i
     return <AnimatedProjectLink href={['/works/shangrantang', '/works/nero', '/works/synesthesia'][index]} ariaLabel={`查看${project.subtitle}项目`} transition>{cardContent}</AnimatedProjectLink>;
   }
 
-  return <a className="project-card" href="#contact" aria-label={`查看${project.subtitle}包装设计项目`}>{cardContent}</a>;
+  return <AnimatedProjectLink href="#contact" ariaLabel={`查看${project.subtitle}包装设计项目`}>{cardContent}</AnimatedProjectLink>;
 }
 
 export default function Home() {

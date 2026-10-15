@@ -18,7 +18,7 @@ export function SiteHeader({ home = false, about = false }: { home?: boolean; ab
     document.addEventListener('keydown', escape);
     return () => { document.removeEventListener('pointerdown', dismiss); document.removeEventListener('keydown', escape); };
   }, [open]);
-  return <header ref={headerRef} className={`site-header${open ? ' menu-open' : ''}`}>
+  return <header ref={headerRef} className={`site-header${open ? ' menu-open' : ''}`} data-lenis-prevent={open ? true : undefined}>
     <a href={home ? '#top' : '/'} className="identity" aria-label="回到首页"><span>EVEN ZHANG</span><span>张译文</span></a>
     <button ref={buttonRef} className="nav-toggle" type="button" aria-label={open ? '关闭导航' : '打开导航'} aria-expanded={open} aria-controls="site-navigation" onClick={() => setOpen(!open)}><span /><span /></button>
     <nav id="site-navigation" aria-label="主导航" onClick={() => setOpen(false)}>
