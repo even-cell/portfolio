@@ -6,6 +6,7 @@ const works = [
   { id: 'synesthesia', name: '中国美术学院', image: 'synesthesia-cover-960.webp', href: '/works/synesthesia' },
   { id: 'mango', name: '果汁包装设计', image: 'mango-drink-clean.jpg', href: '' },
   { id: 'project-5', name: '包装设计 / 05', image: 'project-5.jpg', href: '' },
+  { id: 'roof', name: '屋顶唱片', image: 'roof/15-960.webp', href: '/works/roof' },
   { id: 'project-6', name: '视觉设计 / 06', image: 'project-6.jpg', href: '' },
 ];
 export function NextProjects({ current = 'shangrantang' }: { current?: string }) {
