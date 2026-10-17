@@ -1,7 +1,7 @@
 # 作品集进度与偏好
 
 更新日期：2026-10-17（Asia/Shanghai）
-状态：2026-10-15 最新版本已备份到 GitHub 并部署到 Cloudflare，正式域名验证通过。
+状态：2026-10-17 最新网站已保存到 GitHub 并部署到 Cloudflare，正式域名验证通过。
 
 ## 用户确认的预览方式
 
@@ -106,3 +106,14 @@ TypeScript 检查及生产构建通过；检查过 1440px 桌面、390px 手机�
 - 已完成类型检查、生产构建、13 项隔离回归、21 组响应式检查、147 个公开静态资源检查；原有 35 项 lint 提示未清零。
 - 详细维护报告与回退备份在同级 output/maintenance-2026-10-17、output/security-update-2026-10-17，未加入部署内容。
 - 本次用户已明确授权推送 GitHub 并更新 Cloudflare；发布目标仍为 even-cell/portfolio main、Worker evenportfolio、www.evenzhang.work。
+
+### 本次发布结果（2026-10-17）
+- 网站代码提交：`1457295`，已正常推送 GitHub origin/main，未强制推送。
+- Cloudflare Worker：`evenportfolio`；新版本 `54a38228-caa8-4f28-bfb0-33b74cd06559`，部署成功。
+- 保持原线上 compatibility_date `2026-05-15`、`nodejs_compat`；部署使用 `--keep-vars`。构建工具新生成的默认兼容日期未覆盖生产设置。
+- 上一生产版本 `421cc280-9701-48ee-96c8-41e384c1f9e1` 保留，可用于回退。
+- 发布前用既有兼容日期本地运行最终 Worker 构建，7 个页面均 HTTP 200。
+- 正式域名 https://www.evenzhang.work 的首页、ABOUT、尚然堂、FÓRA、通感、屋顶唱片、项目 09 共 7 页均 HTTP 200；已验证新品牌名、项目 09 新封面及最新版权文案。
+- 正式域名样式已确认包含黑幕过渡和卡片 5px 模糊；所有检查页面已移除 Figma capture.js。
+- 项目 09 正式图片为 624089 字节，SHA-256 与本地文件一致。
+- 发布证据和本地测试记录保存在同级 output/release-2026-10-17；本地常用预览仍为 localhost:3000 与 /mobile-preview.html。
