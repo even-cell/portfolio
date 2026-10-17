@@ -14,7 +14,7 @@ export function ContactSection() {
       </section>
       <div className="contact-legal">
         <p>© 2026 EVEN ZHANG. All Rights Reserved.</p>
-        <p>本网站作品仅用于个人展示与交流，相关知识产权归各权利人所有，未经授权不得转载或用于商业用途。</p>
+        <p>本网站作品仅用于个人展示与交流，相关知识产权归各权利人所有。未经授权不得转载，严禁用于任何商业用途。</p>
       </div>
       <a href="#top" className="contact-wordmark" aria-label="Even Zhang · 返回顶部">
         <span className="contact-marquee-track" aria-hidden="true">

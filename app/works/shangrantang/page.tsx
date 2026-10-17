@@ -3,7 +3,6 @@ import { ContactSection } from '../../contact-section';
 import { ProjectInfo } from '../../project-info';
 import type { Metadata } from 'next';
 import { CustomCursor } from '../../custom-cursor';
-import { AnimatedProjectLink } from '../../animated-project-link';
 import { ResetDetailScroll } from './reset-detail-scroll';
 import { NextProjects } from '../../next-projects';
 

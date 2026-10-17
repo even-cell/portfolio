@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ImageProtection } from './image-protection';
 import { SmoothScroll } from './smooth-scroll';
+import { PageTransition } from './page-transition';
 import 'lenis/dist/lenis.css';
 import './globals.css';
 
@@ -38,14 +39,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN">
+    <html lang="zh-CN" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `try{var t=JSON.parse(sessionStorage.getItem('portfolio-page-transition')||'null');sessionStorage.removeItem('portfolio-page-transition');if(t&&t.path===location.pathname&&Date.now()-t.time<15000&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.dataset.pageArrival='true'}catch(e){}` }} />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async />
         <ImageProtection />
         <SmoothScroll />
         {children}
+        <PageTransition />
       </body>
     </html>
   );

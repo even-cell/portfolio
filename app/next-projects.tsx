@@ -2,7 +2,7 @@
 import { AnimatedProjectLink } from './animated-project-link';
 const works = [
   { id: 'shangrantang', name: '尚然堂', image: 'shangrantang-purple.jpg', href: '/works/shangrantang' },
-  { id: 'nero', name: '耐热 NÉRO', image: 'fora-cover-960.webp?v=2', href: '/works/nero' },
+  { id: 'nero', name: 'FÓRA弗若', image: 'fora-cover-960.webp?v=2', href: '/works/nero' },
   { id: 'synesthesia', name: '中国美术学院', image: 'synesthesia-cover-960.webp', href: '/works/synesthesia' },
   { id: 'mango', name: '果汁包装设计', image: 'mango-drink-clean.jpg', href: '' },
   { id: 'project-5', name: '包装设计 / 05', image: 'project-5.jpg', href: '' },
@@ -17,7 +17,7 @@ export function NextProjects({ current = 'shangrantang' }: { current?: string })
     <div className="next-grid" aria-label="更多作品">
       {orderedWorks.map(work => {
         const content = <><div className="next-image"><img src={`/projects/${work.image}`} alt={work.name} loading="lazy" draggable={false} /></div><div className="sr-only"><span>{work.name}</span><small>{work.href ? '查看项目 ↗' : '即将上线'}</small></div></>;
-        return work.href ? <AnimatedProjectLink key={work.id} href={work.href} ariaLabel={`查看${work.name}详情`} className="next-card" transition>{content}</AnimatedProjectLink> : <article className="next-card next-pending" key={work.id}>{content}</article>;
+        return work.href ? <AnimatedProjectLink key={work.id} href={work.href} ariaLabel={`查看${work.name}详情`} className="next-card">{content}</AnimatedProjectLink> : <article className="next-card next-pending" key={work.id}>{content}</article>;
       })}
     </div>
   </section>;

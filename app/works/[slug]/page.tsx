@@ -4,13 +4,13 @@ import { ProjectInfo } from '../../project-info';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { CustomCursor } from '../../custom-cursor';
-import { AnimatedProjectLink } from '../../animated-project-link';
 import { NextProjects } from '../../next-projects';
 import { ProjectVideo } from '../../project-video';
 import { ResetDetailScroll } from '../shangrantang/reset-detail-scroll';
 const projects = {
+  'project-09': { name: '项目 09', title: '作品待更新', image: 'project-09-title-gw-2.jpg', meta: '' },
   roof: { name: '屋顶唱片', title: '音乐可以认真听', image: 'roof/15-1920.webp', meta: '品牌视觉 · 2023' },
-  nero: { name: '耐热 NÉRO', title: '打造当代精酿啤酒的年轻新风尚', image: 'fora-cover-1920.webp?v=2', meta: '包装设计 · 2026' },
+  nero: { name: 'FÓRA弗若', title: '打造当代精酿啤酒的年轻新风尚', image: 'fora-cover-1920.webp?v=2', meta: '包装设计 · 2026' },
   synesthesia: { name: '中国美术学院', title: '艺术通感的视听交互', image: 'synesthesia-stage-cover-1920.webp', meta: '' },
 };
 type Props = { params: Promise<{ slug: string }> };
@@ -33,7 +33,7 @@ export default async function Project({ params }: Props) {
       <section className="synesthesia-gallery" aria-label="屋顶唱片项目图片">
         {[1080, 1080, 1080, 1080, 1080, 1080, 1080, 1440, 1600, 1600, 1440, 1600, 1600, 1440, 1498].map((height, index) => {
           const number = String(index + 1).padStart(2, '0');
-          return <img key={number} src={`/projects/roof/${number}-1920.webp`} srcSet={`/projects/roof/${number}-960.webp 960w, /projects/roof/${number}-1920.webp 1920w`} sizes="(max-width: 700px) calc(100vw - 24px), calc(100vw - 72px)" width={1920} height={height} alt={`屋顶唱片品牌视觉 · ${number}`} loading="lazy" decoding="async" />;
+          return <div className="protected-image" key={number}><img src={`/projects/roof/${number}-1920.webp`} srcSet={`/projects/roof/${number}-960.webp 960w, /projects/roof/${number}-1920.webp 1920w`} sizes="(max-width: 700px) calc(100vw - 24px), calc(100vw - 72px)" width={1920} height={height} alt={`屋顶唱片品牌视觉 · ${number}`} loading="lazy" decoding="async" /></div>;
         })}
       </section>
     </> : slug === 'synesthesia' ? <div className="detail-transition">
@@ -53,13 +53,13 @@ export default async function Project({ params }: Props) {
         {[5079, 5079, 5079, 5079, 5080, 7128, 5080, 5080, 5079, 5717, 5079, 5717, 5080, 5080, 5079].map((height, index) => {
           const number = String(index + 1).padStart(2, '0');
           const version = [8, 13, 14, 15].includes(index + 1) ? '?v=2' : '';
-          return <img key={number}
+          return <div className="protected-image" key={number}><img
             src={`/projects/synesthesia-refresh/${number}-1920.webp${version}`}
             srcSet={`/projects/synesthesia-refresh/${number}-960.webp${version} 960w, /projects/synesthesia-refresh/${number}-1920.webp${version} 1920w`}
             sizes="(max-width: 700px) calc(100vw - 24px), calc(100vw - 72px)"
             width={1920} height={Math.round(height * 1920 / 3780)}
             alt={`通感·博雅国际学术论坛视觉设计 · ${number}`}
-            loading="lazy" decoding="async" />;
+            loading="lazy" decoding="async" /></div>;
         })}
       </section>
     </>}
