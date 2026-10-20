@@ -220,10 +220,19 @@ html.lenis, html.lenis body { scroll-behavior: auto !important; }
 .about-intro { padding: clamp(160px, 15vw, 290px) var(--page-gutter) 0; }
 .about-intro h1 { margin: 0; text-align: right; font-size: clamp(56px, 6.8vw, 136px); font-weight: 450; line-height: 1.08; letter-spacing: -.045em; }
 .about-intro h1 span { display: block; margin-top: 12px; }
-.about-bio { display: grid; grid-template-columns: 1.4fr 1fr; gap: 8vw; margin-top: clamp(80px, 10vw, 180px); }
-.about-bio > p { margin: 0; font-size: clamp(24px, 2.5vw, 48px); line-height: 1.5; letter-spacing: -.025em; }
-.about-description { max-width: 30em; font-size: clamp(16px, 1.25vw, 24px); line-height: 1.8; }
-.about-description p { margin: 0 0 20px; color: #aaa; }
+.about-bio { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px, 9vw, 172px); margin-top: clamp(80px, 10vw, 180px); padding-top: 28px; border-top: 1px solid #ffffff30; }
+.about-eyebrow { display: block; color: #999; font-size: 11px; letter-spacing: .14em; }
+.about-profile-heading h2 { margin: 32px 0 56px; font-size: clamp(30px, 3.5vw, 64px); font-weight: 400; line-height: 1.4; letter-spacing: -.035em; }
+.about-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 0; }
+.about-metrics dt { font-size: clamp(36px, 4.2vw, 76px); line-height: 1.1; letter-spacing: -.05em; font-weight: 400; }
+.about-metrics dt > span { margin-left: 5px; font-size: .4em; vertical-align: baseline; }
+.about-metrics dd { margin: 16px 0 0; color: #aaa; font-size: 12px; line-height: 1.6; }
+.about-metrics dd > span { display: block; margin-top: 5px; font-size: 9px; letter-spacing: .06em; }
+.about-description { max-width: 38em; padding-top: 45px; }
+.about-description p { margin: 0 0 20px; }
+.about-copy-zh { color: #ddd; font-size: clamp(16px, 1.3vw, 21px); line-height: 1.95; letter-spacing: .025em; }
+.about-copy-en { margin-top: 36px; padding-top: 28px; border-top: 1px solid #ffffff20; color: #999; font-size: clamp(13px, 1vw, 16px); line-height: 1.8; }
+.about-copy-en p:last-child, .about-copy-zh p:last-child { margin-bottom: 0; }
 @media (min-width: 701px) and (max-width: 1100px) { .site-header nav { gap: 36px; } }
 @media (max-width: 700px) {
   .nav-toggle { pointer-events: auto; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 7px; width: 44px; height: 44px; margin-top: -7px; padding: 0; border: 0; background: transparent; color: inherit; cursor: pointer; }
@@ -255,7 +264,10 @@ html.lenis, html.lenis body { scroll-behavior: auto !important; }
   .about-intro h1 { font-size: clamp(36px, 8.5vw, 60px); }
   .about-bio { grid-template-columns: 1fr; gap: 32px; margin-top: 64px; }
   .about-bio > p { font-size: clamp(22px, 5.6vw, 32px); }
-  .about-description { font-size: 16px; }
+  .about-description { padding-top: 0; max-width: none; }
+  .about-profile-heading h2 { margin: 24px 0 36px; }
+  .about-metrics { padding-bottom: 30px; border-bottom: 1px solid #ffffff20; }
+  .about-copy-en { margin-top: 28px; }
 }
 
 
@@ -284,3 +296,8 @@ html[data-page-arrival] body > main { animation: page-content-arrive 400ms cubic
 @media (max-width: 700px) {
   .works .project-copy { position: absolute; top: 50%; left: 10px; right: 10px; transform: translateY(-50%); }
 }
+
+.about-sectors { margin: 38px 0 0; padding-top: 24px; border-top: 1px solid #ffffff30; max-width: 32em; color: #ddd; font-size: clamp(16px, 1.3vw, 21px); line-height: 1.95; letter-spacing: .025em; }
+@media (max-width: 700px) { .about-sectors { margin-top: 0; padding-top: 24px; border-top: 0; } }
+
+.summer-fans-animation-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--image-gap); align-items: start; margin-block: clamp(80px, 12vw, 200px); }

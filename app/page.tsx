@@ -3,27 +3,15 @@ import { ContactSection } from './contact-section';
 import { CustomCursor } from './custom-cursor';
 import { AnimatedProjectLink } from './animated-project-link';
 
-const projects = [
-  { image: '/projects/shangrantang-purple.jpg', position: 'center', fit: 'cover', title: ['让传统草本进入', '当代生活方式'], subtitle: '尚然堂', meta: '包装设计' },
-  { image: '/projects/fora-cover-1920.webp?v=2', position: 'center', fit: 'cover', title: ['打造当代精酿啤酒的', '年轻新风尚'], subtitle: 'FÓRA弗若', meta: '包装设计' },
-  { image: '/projects/synesthesia-stage-cover-1920.webp', position: 'center', fit: 'cover', title: ['艺术通感的视听交互'], subtitle: '中国美术学院', meta: '活动设计' },
-  { image: '/projects/primva-cover.webp?v=2', position: 'center', fit: 'cover', title: ['让传统草本进入', '当代生活方式'], subtitle: '尚然堂', meta: '包装设计' },
-  { image: '/projects/doctor-roo-cover.webp?v=2', position: 'center', fit: 'cover', title: ['让传统草本进入', '当代生活方式'], subtitle: '尚然堂', meta: '包装设计' },
-  { image: '/projects/project-6.jpg', position: 'center', fit: 'cover', title: ['让传统草本进入', '当代生活方式'], subtitle: '尚然堂', meta: '包装设计' },
-  { image: '/projects/project-7.jpg', position: 'center', fit: 'cover', title: ['作品待更新'], subtitle: '项目 07', meta: '敬请期待' },
-  { image: '/projects/roof/15-1920.webp', position: 'center', fit: 'cover', title: ['音乐可以认真听'], subtitle: '屋顶唱片', meta: '品牌视觉' },
-  { image: '/projects/project-09-title-gw-2.jpg', position: 'center', fit: 'cover', title: ['作品待更新'], subtitle: '项目 09', meta: '敬请期待' },
-  { image: '/projects/project-4.jpg', position: 'center', fit: 'cover', title: ['作品待更新'], subtitle: '项目 10', meta: '敬请期待' },
-  { image: '/projects/project-5.jpg', position: 'center', fit: 'cover', title: ['作品待更新'], subtitle: '项目 11', meta: '敬请期待' },
-];
+import { projects } from './projects';
 
 function ProjectCard({ project, index }: { project: (typeof projects)[number]; index: number }) {
   const cardContent = (
     <>
       <img
         src={project.image}
-        srcSet={index === 7 ? "/projects/roof/15-960.webp 960w, /projects/roof/15-1920.webp 1920w" : index === 1 ? "/projects/fora-cover-960.webp?v=2 960w, /projects/fora-cover-1920.webp?v=2 1920w" : index === 2 ? "/projects/synesthesia-stage-cover-960.webp 960w, /projects/synesthesia-stage-cover-1920.webp 1920w" : undefined}
-        sizes={index === 7 ? "(max-width: 700px) calc(100vw - 24px), calc((100vw - 84px) / 2)" : index === 1 ? "(max-width: 700px) calc(100vw - 24px), calc((100vw - 84px) / 2)" : index === 2 ? "(max-width: 700px) calc(100vw - 24px), calc(100vw - 72px)" : undefined}
+        srcSet={index === 8 ? "/projects/summer-fans-cover-960.webp 960w, /projects/summer-fans-cover-1920.webp 1920w" : index === 9 ? "/projects/poster-cover-960.webp 960w, /projects/poster-cover-1920.webp 1920w" : index === 10 ? "/projects/grey-wild-cover-960.webp 960w, /projects/grey-wild-cover-1920.webp 1920w" : index === 7 ? "/projects/roof/15-960.webp 960w, /projects/roof/15-1920.webp 1920w" : index === 1 ? "/projects/fora-five-cans-960.webp 960w, /projects/fora-five-cans-1920.webp 1920w" : index === 2 ? "/projects/synesthesia-stage-cover-960.webp 960w, /projects/synesthesia-stage-cover-1920.webp 1920w" : undefined}
+        sizes={index === 8 ? "(max-width: 700px) calc(100vw - 24px), calc(100vw - 72px)" : index === 9 ? "(max-width: 700px) calc(100vw - 24px), calc((100vw - 84px) / 2)" : index === 10 ? "(max-width: 700px) calc(100vw - 24px), calc((100vw - 84px) / 2)" : index === 3 ? "(max-width: 700px) calc(100vw - 24px), calc((100vw - 84px) / 2)" : index === 7 ? "(max-width: 700px) calc(100vw - 24px), calc((100vw - 84px) / 2)" : index === 1 ? "(max-width: 700px) calc(100vw - 24px), calc((100vw - 84px) / 2)" : index === 2 ? "(max-width: 700px) calc(100vw - 24px), calc(100vw - 72px)" : undefined}
         alt={`${project.subtitle}项目预览`}
         loading={index > 2 ? 'lazy' : 'eager'}
         style={{ objectPosition: project.position, objectFit: project.fit as 'cover' | 'contain' }}
@@ -38,19 +26,7 @@ function ProjectCard({ project, index }: { project: (typeof projects)[number]; i
     </>
   );
 
-  if (index === 8) {
-    return <AnimatedProjectLink href="/works/project-09" ariaLabel="查看项目 09">{cardContent}</AnimatedProjectLink>;
-  }
-
-  if (index === 7) {
-    return <AnimatedProjectLink href="/works/roof" ariaLabel="查看屋顶唱片项目">{cardContent}</AnimatedProjectLink>;
-  }
-
-  if (index < 3) {
-    return <AnimatedProjectLink href={['/works/shangrantang', '/works/nero', '/works/synesthesia'][index]} ariaLabel={`查看${project.subtitle}项目`}>{cardContent}</AnimatedProjectLink>;
-  }
-
-  return <AnimatedProjectLink href="#contact" ariaLabel={`查看${project.subtitle}包装设计项目`}>{cardContent}</AnimatedProjectLink>;
+  return <AnimatedProjectLink href={`/works/${project.id}`} ariaLabel={`查看${'name' in project ? project.name : project.subtitle}项目`}>{cardContent}</AnimatedProjectLink>;
 }
 
 export default function Home() {

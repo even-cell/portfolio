@@ -23,9 +23,6 @@ export const metadata: Metadata = {
 };
 
 const gallery = [
-  { src: '/projects/shangrantang/process-06.jpg', alt: '尚然堂品牌背景与项目介绍', layout: 'document' },
-  { src: '/projects/shangrantang/process-07.jpg', alt: '尚然堂需求分析与设计目标', layout: 'document' },
-  { src: '/projects/shangrantang/process-08.jpg', alt: '尚然堂核心策略与包装视觉系统', layout: 'document' },
   { src: '/projects/shangrantang/detail-05.png', alt: '尚然堂清润肺胃和顺汤视觉设计', layout: 'document' },
   { src: '/projects/shangrantang/detail-01.png', alt: '尚然堂轻盈安身祛湿汤视觉设计', layout: 'document' },
   { src: '/projects/shangrantang-purple.jpg', alt: '尚然堂轻盈安身祛湿汤包装展开设计', layout: 'document' },
