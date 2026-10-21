@@ -1,3 +1,4 @@
+import { PortfolioImage } from './portfolio-image';
 import { SiteHeader } from './site-header';
 import { ContactSection } from './contact-section';
 import { CustomCursor } from './custom-cursor';
@@ -8,7 +9,7 @@ import { projects } from './projects';
 function ProjectCard({ project, index }: { project: (typeof projects)[number]; index: number }) {
   const cardContent = (
     <>
-      <img
+      <PortfolioImage
         src={project.image}
         srcSet={index === 8 ? "/projects/summer-fans-cover-960.webp 960w, /projects/summer-fans-cover-1920.webp 1920w" : index === 9 ? "/projects/poster-cover-960.webp 960w, /projects/poster-cover-1920.webp 1920w" : index === 10 ? "/projects/grey-wild-cover-960.webp 960w, /projects/grey-wild-cover-1920.webp 1920w" : index === 7 ? "/projects/roof/15-960.webp 960w, /projects/roof/15-1920.webp 1920w" : index === 1 ? "/projects/fora-five-cans-960.webp 960w, /projects/fora-five-cans-1920.webp 1920w" : index === 2 ? "/projects/synesthesia-stage-cover-960.webp 960w, /projects/synesthesia-stage-cover-1920.webp 1920w" : undefined}
         sizes={index === 8 ? "(max-width: 700px) calc(100vw - 24px), calc(100vw - 72px)" : index === 9 ? "(max-width: 700px) calc(100vw - 24px), calc((100vw - 84px) / 2)" : index === 10 ? "(max-width: 700px) calc(100vw - 24px), calc((100vw - 84px) / 2)" : index === 3 ? "(max-width: 700px) calc(100vw - 24px), calc((100vw - 84px) / 2)" : index === 7 ? "(max-width: 700px) calc(100vw - 24px), calc((100vw - 84px) / 2)" : index === 1 ? "(max-width: 700px) calc(100vw - 24px), calc((100vw - 84px) / 2)" : index === 2 ? "(max-width: 700px) calc(100vw - 24px), calc(100vw - 72px)" : undefined}

@@ -1,0 +1,6 @@
+/projects/optimized-v1/*
+  Cache-Control: public, max-age=31536000, immutable
+/projects/optimized-animations-v1/*
+  Cache-Control: public, max-age=31536000, immutable
+/projects/hero-hd-v1/*
+  Cache-Control: public, max-age=31536000, immutable

@@ -1,3 +1,4 @@
+import { PortfolioImage } from '../../portfolio-image';
 import { SiteHeader } from '../../site-header';
 import { ContactSection } from '../../contact-section';
 import { ProjectInfo } from '../../project-info';
@@ -43,7 +44,7 @@ export default function ShangrantangProject() {
       <div className="detail-transition">
         <section className="detail-hero" aria-label="尚然堂项目封面">
           <div className="detail-hero-frame">
-            <img src="/projects/shangrantang-purple.jpg" alt="尚然堂草本产品包装展开设计" />
+            <PortfolioImage hero fetchPriority="high" src="/projects/shangrantang-purple.jpg" alt="尚然堂草本产品包装展开设计" />
           </div>
         </section>
 
@@ -55,7 +56,7 @@ export default function ShangrantangProject() {
       <section className="detail-gallery" aria-label="尚然堂项目图片">
         {gallery.map((image, index) => (
           <figure className={`detail-image ${image.layout}`} key={image.src}>
-            <img src={image.src} alt={image.alt} loading={index > 1 ? 'lazy' : 'eager'} />
+            <PortfolioImage src={image.src} alt={image.alt} loading={index > 1 ? 'lazy' : 'eager'} />
           </figure>
         ))}
       </section>
